@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { StyledEngineProvider } from '@mui/material';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       </header> */}
       <StyledEngineProvider injectFirst>
       <Navbar />
+      <Hero />
       </StyledEngineProvider>
       
     </div>
