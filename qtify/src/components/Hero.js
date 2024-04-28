@@ -9,7 +9,6 @@ export default function Hero() {
             <p>100 Thousand Songs, ad-free" and “Over thousands podcast episodes</p>
             <img src={heroimage} alt="headphone" width={212} height={212} />
             {/* </div> */}
-            
         </div>
     )
 
