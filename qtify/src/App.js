@@ -14,6 +14,7 @@ import Section from './components/Section';
 function App() {
 
   const [topalbums,setTopalbums] = useState([])
+  const [newalbums,setNewalbums] = useState([])
 let stateProduct = [[{_id :1 ,image : "/static/images/cards/contemplative-reptile.jpg", }],[{_id :12 ,image : "/static/images/cards/contemplative-reptile.jpg", }],[{_id :13 ,image : "/static/images/cards/contemplative-reptile.jpg", }],[{_id :14 ,image : "/static/images/cards/contemplative-reptile.jpg", }]]
 
 useEffect(() => {
@@ -24,9 +25,11 @@ useEffect(() => {
 
 const performAPICall = async () => {
 
-    let result = await axios.get("https://qtify-backend-labs.crio.do/albums/top")
-    console.log(result)
-    setTopalbums(result.data)
+    let result1 = await axios.get("https://qtify-backend-labs.crio.do/albums/top")
+    console.log(result1)
+    setTopalbums(result1.data)
+    let result2 = await axios.get("https://qtify-backend-labs.crio.do/albums/new");
+    setNewalbums(result2.data)
 }
 
   return (
@@ -36,7 +39,7 @@ const performAPICall = async () => {
       <Navbar />
       <Hero />
       <Section title="Top Albums" data={topalbums} type="album" />
-
+      <Section title="New Albums" data={newalbums} type="album" />
       {/* <Grid container spacing={2}>
       {topalbums.map((product) => ( 
                   <Grid key={product._id} item lg={2}>
