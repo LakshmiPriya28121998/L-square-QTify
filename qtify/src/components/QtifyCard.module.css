@@ -1,0 +1,29 @@
+.chip {
+    background-color: var(--color-black);
+    color: var(--colour-white);
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.card {
+    width: 200px;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.para {
+    width: 200px;
+}
+
+.wrapperdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+   padding: 20px;
+}
