@@ -38,7 +38,7 @@ export default function Section({ title , data, filterSource, type}) {
             <div className={styles.header}>
                 <h3>{title}</h3>
                 <h4 className={styles.toggletext} onClick={handleToggle}>
-                    {carouselToggle ? "Collapse All" : "Show All"}
+                    {!carouselToggle ? "Collapse All" : "Show All"}
                 </h4>
             </div>
        
@@ -53,7 +53,7 @@ export default function Section({ title , data, filterSource, type}) {
             <CircularProgress />
         ) : (
             <div>
-                {carouselToggle ? (
+                {!carouselToggle ? (
                     <Grid container spacing={2}>
                     {data.map((product) => ( 
                                 <Grid key={product._id} item lg={2}>
