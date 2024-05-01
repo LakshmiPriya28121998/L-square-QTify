@@ -6,10 +6,14 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import styles from "./QtifyCard.module.css"
+import {
+  Grid
+} from "@mui/material";
 
 export default function QtifyCard({ qtifycard , type}) {
   if(type === "album"){
     return (
+      // <Grid key={qtifycard._id} item lg={2}>
       <div className={styles.wrapperdiv}>
       <Card  key={qtifycard._id} sx={{ maxWidth: 200 }} height="205" className={styles.card}>
         <CardActionArea >
@@ -27,6 +31,7 @@ export default function QtifyCard({ qtifycard , type}) {
       </Card>
       <p >{qtifycard.title}</p>
       </div>
+      // </Grid>
     );
   }
   else if(type === "song"){

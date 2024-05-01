@@ -66,8 +66,10 @@ export default function Section({ title , data, filterSource, type}) {
                 ) : (
                 
                 // <div> corousel </div>
+                // <Grid container spacing={2}>
                 <Carousel data={data} renderComponent={(data) => <QtifyCard 
                     qtifycard={data} type={type} /> } />
+                    //   </Grid>
                 
                 )}
             </div>
