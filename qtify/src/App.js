@@ -13,13 +13,20 @@ import Section from './components/Section';
 
 function App() {
 
-  const [topalbums,setTopalbums] = useState([])
-  const [newalbums,setNewalbums] = useState([])
-let stateProduct = [[{_id :1 ,image : "/static/images/cards/contemplative-reptile.jpg", }],[{_id :12 ,image : "/static/images/cards/contemplative-reptile.jpg", }],[{_id :13 ,image : "/static/images/cards/contemplative-reptile.jpg", }],[{_id :14 ,image : "/static/images/cards/contemplative-reptile.jpg", }]]
+  const [topalbums,setTopalbums] = useState([]);
+  const [newalbums,setNewalbums] = useState([]);
+  const [songs,setSongs] = useState([]);
+  // const [fetchFilters, setFetchFilters] = useState([]);
 
 useEffect(() => {
   performAPICall()
 },[])
+
+
+// const fetchFilters = async () => {
+//   const response = await axios.get("https://qtify-backend-labs.crio.do/genres");
+//   return response.data;
+// }
 
 
 
@@ -30,6 +37,10 @@ const performAPICall = async () => {
     setTopalbums(result1.data)
     let result2 = await axios.get("https://qtify-backend-labs.crio.do/albums/new");
     setNewalbums(result2.data)
+    let result3 = await axios.get("https://qtify-backend-labs.crio.do/songs");
+    setSongs(result3.data);
+    // let result4 = await axios.get("https://qtify-backend-labs.crio.do/genres");
+    // setFetchFilters(result4.data);
 }
 
   return (
@@ -40,6 +51,7 @@ const performAPICall = async () => {
       <Hero />
       <Section title="Top Albums" data={topalbums} type="album" />
       <Section title="New Albums" data={newalbums} type="album" />
+      <Section title="Songs" data={songs}  type="song" />
       {/* <Grid container spacing={2}>
       {topalbums.map((product) => ( 
                   <Grid key={product._id} item lg={2}>

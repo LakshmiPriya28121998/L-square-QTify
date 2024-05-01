@@ -15,7 +15,7 @@ export default function QtifyCard({ qtifycard , type}) {
     return (
       // <Grid key={qtifycard._id} item lg={2}>
       <div className={styles.wrapperdiv}>
-      <Card  key={qtifycard._id} sx={{ maxWidth: 200 }} height="205" className={styles.card}>
+      <Card  key={qtifycard.id} sx={{ maxWidth: 200 }} height="205" className={styles.card}>
         <CardActionArea >
           <CardMedia
             component="img"
@@ -37,7 +37,7 @@ export default function QtifyCard({ qtifycard , type}) {
   else if(type === "song"){
     return (
       <div className={styles.wrapperdiv}>
-      <Card  key={qtifycard._id} sx={{ maxWidth: 200 }} height="205" className={styles.card}>
+      <Card  key={qtifycard.id} sx={{ maxWidth: 200 }} height="205" className={styles.card}>
         <CardActionArea >
           <CardMedia
             component="img"
